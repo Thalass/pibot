@@ -1,41 +1,38 @@
 from rrb2 import *
 import RPi.GPIO as GPIO
-import time
+from time import sleep
 
 rr = RRB2()
+print "setup complete"
 
 def init():
-    rr.set_led1(0)
+    rr.set_led1(1)
     rr.set_led2(0)
     rr.stop()
+    print "initialized"
 
-def forward(time):
-    rr.forward(time)
+def forward():
+    rr.forward(0)
+    print "forward"
 
-def left(time):
-    rr.left(time)
+def left():
+    rr.left(0)
+    print "left"
 
-def right(time):
-    rr.right(time)
+def right():
+    rr.right(0)
+    print "right"
 
-def stop(time):
-    rr.stop(time)
+def reverse():
+    rr.reverse(0)
+    print "reverse" 
 
-def reverse(time):
-    rr.reverse(time)
+def stop():
+    rr.stop()
+    print "stop"
 
 def main():
-    forward(1)
-    stop()
-    wait(0.5)
-    left(1)
-    stop()
-    wait(0.5)
-    right(1)
-    stop()
-    wait(0.5)
-    reverse(1)
-    stop()
+    pass
 
 if "__name__" == "__main__":
     main()
